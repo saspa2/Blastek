@@ -1,0 +1,20 @@
+@ newton raphson  =====================>>>>     Day 1
+def newton_raphson(func, func_derivative, initial_guess, tolerance=1e-6, max_iterations=100):
+    x = initial_guess
+    iteration = 0
+
+    while abs(func(x)) > tolerance and iteration < max_iterations:
+        x = x - func(x) / func_derivative(x)
+        iteration += 1
+
+    if iteration == max_iterations:
+        print("تعداد حداکثر تکرار را برسی کنید.")
+    else:
+        print(f"ریشه یافت شد: {x} در تکرار {iteration}.")
+
+# مثال: برای یافتن ریشه تابع f(x) = x^2 - 5 با مشتق f'(x) = 2x
+func = lambda x: x**2 - 5
+func_derivative = lambda x: 2*x
+
+initial_guess = 2  # حدس اولیه
+newton_raphson(func, func_derivative, initial_guess)
