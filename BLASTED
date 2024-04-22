@@ -1,4 +1,4 @@
-@ newton raphson  =====================>>>>     Day 58
+@ newton raphson  =====================>>>>     Day 59
 def newton_raphson(func, func_derivative, initial_guess, tolerance=1e-6, max_iterations=100):
     x = initial_guess
     iteration = 0
